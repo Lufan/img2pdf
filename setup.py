@@ -1,7 +1,7 @@
 import sys
 from setuptools import setup
 
-VERSION = "0.4.0"
+VERSION = "0.4.1"
 
 INSTALL_REQUIRES = (
     "Pillow",
@@ -32,8 +32,8 @@ setup(
         "Natural Language :: English",
         "Operating System :: OS Independent",
     ],
-    url="https://gitlab.mister-muffin.de/josch/img2pdf",
-    download_url="https://gitlab.mister-muffin.de/josch/img2pdf/repository/"
+    url="https://github.com/Lufan/img2pdf",
+    download_url="https://github.com/Lufan/img2pdf/repository/"
     "archive.tar.gz?ref=" + VERSION,
     package_dir={"": "src"},
     py_modules=["img2pdf", "jp2"],

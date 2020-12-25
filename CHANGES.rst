@@ -2,6 +2,11 @@
 CHANGES
 =======
 
+0.4.1 (2020-12-25)
+------------------
+
+ - Removed restriction: "Disallow input with alpha channel as it cannot be preserved"
+
 0.4.0 (2020-08-07)
 ------------------
 

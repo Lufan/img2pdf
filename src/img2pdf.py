@@ -48,7 +48,7 @@ try:
 except ImportError:
     have_pikepdf = False
 
-__version__ = "0.4.0"
+__version__ = "0.4.1"
 default_dpi = 96.0
 papersizes = {
     "letter": "8.5inx11in",
@@ -1175,16 +1175,6 @@ def get_imgmetadata(imgdata, imgformat, default_dpi, colorspace, rawdata=None):
         # Search online for the 72.009 dpi problem for more info.
         ndpi = (int(round(ndpi[0])), int(round(ndpi[1])))
         ics = imgdata.mode
-
-    if ics in ["LA", "PA", "RGBA"] or "transparency" in imgdata.info:
-        logging.warning("Image contains transparency which cannot be retained in PDF.")
-        logging.warning("img2pdf will not perform a lossy operation.")
-        logging.warning("You can remove the alpha channel using imagemagick:")
-        logging.warning(
-            "  $ convert input.png -background white -alpha "
-            "remove -alpha off output.png"
-        )
-        raise AlphaChannelError("Refusing to work on images with alpha channel")
 
     # Since commit 07a96209597c5e8dfe785c757d7051ce67a980fb or release 4.1.0
     # Pillow retrieves the DPI from EXIF if it cannot find the DPI in the JPEG
