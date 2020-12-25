@@ -775,7 +775,7 @@ class pdfdoc(object):
 
         if color == Colorspace["1"] or color == Colorspace.L:
             colorspace = PdfName.DeviceGray
-        elif color == Colorspace.RGB:
+        elif color == Colorspace.RGB or color == Colorspace.RGBA:
             colorspace = PdfName.DeviceRGB
         elif color == Colorspace.CMYK or color == Colorspace["CMYK;I"]:
             colorspace = PdfName.DeviceCMYK
